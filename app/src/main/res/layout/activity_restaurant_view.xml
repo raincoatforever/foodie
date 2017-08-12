@@ -1,0 +1,91 @@
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    card_view:cardCornerRadius="1dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/placeholder"
+        android:id="@+id/google_map_imageview" />
+
+        <ProgressBar
+            android:id="@+id/progress_bar_restaurant_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_alignBottom="@+id/google_map_imageview" />
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/google_map_imageview">
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/google_map_imageview">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:id="@+id/address_section"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/google_map_imageview"
+                    android:layout_marginTop="24dp"
+                    android:paddingLeft="20dp"
+                    android:elevation="10dp"
+                    android:layout_marginBottom="24dp">
+
+                    <TextView
+                        android:text="1234 4th street"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+                        android:id="@+id/street_address1" />
+
+                    <TextView
+                        android:text="San francisco, CA, 94086"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Light.SearchResult.Subtitle"
+                        android:id="@+id/street_address2" />
+                </LinearLayout>
+
+                <TextView
+                    android:text="TextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Light.SearchResult.Subtitle"
+                    android:textColor="#FF0000"
+                    android:id="@+id/price_range"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:layout_gravity="center" />
+            </LinearLayout>
+
+            <TextView
+                android:text="TextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/TextAppearance.AppCompat.Light.SearchResult.Subtitle"
+                android:id="@+id/phone_number"
+                android:autoLink="phone"
+                android:layout_marginLeft="24dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="24dp" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+</android.support.v7.widget.CardView>
