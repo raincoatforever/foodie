@@ -2,8 +2,8 @@ package com.ajinkya.foodie.activity;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
@@ -12,10 +12,9 @@ import android.widget.Toast;
 
 import com.ajinkya.foodie.R;
 import com.ajinkya.foodie.model.RestaurantListItem;
-import com.ajinkya.foodie.viewAdapters.RestaurantsListViewAdapter;
 import com.ajinkya.foodie.tasks.FetchRestaurantListTask;
+import com.ajinkya.foodie.viewAdapters.RestaurantsListViewAdapter;
 
-import java.util.LinkedList;
 import java.util.List;
 
 import static com.ajinkya.foodie.IntentExtraConstants.RESTAURANT_ID;
@@ -49,7 +48,6 @@ public class MainActivity extends AppCompatActivity implements FetchRestaurantLi
         adapter.setOnRestaurantSelectedListener(new RestaurantsListViewAdapter.OnRestaurantSelectedListener() {
             @Override
             public void onItemClick(RestaurantListItem item) {
-                Toast.makeText(MainActivity.this, item.getName(), Toast.LENGTH_LONG).show();
                 Intent intent = new Intent(currentActivity, RestaurantViewActivity.class);
                 intent.putExtra(RESTAURANT_ID, item.getId());
                 intent.putExtra(RESTAURANT_NAME, item.getName());
@@ -62,7 +60,7 @@ public class MainActivity extends AppCompatActivity implements FetchRestaurantLi
     @Override
     public void onFailure() {
         progressBar.setVisibility(View.GONE);
-        Toast.makeText(MainActivity.this, "Failed to fetch data!", Toast.LENGTH_SHORT).show();
+        Toast.makeText(MainActivity.this, R.string.generic_error_try_again, Toast.LENGTH_SHORT).show();
     }
 
 }

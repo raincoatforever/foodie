@@ -6,7 +6,6 @@ import com.ajinkya.foodie.model.RestaurantInfo;
 import com.ajinkya.foodie.model.RestaurantListItem;
 
 import java.io.IOException;
-import java.util.LinkedList;
 import java.util.List;
 
 import okhttp3.OkHttpClient;
@@ -59,7 +58,7 @@ public class NetworkApi {
                 .appendPath(String.valueOf(restaurantId));
 
         String restaurants = executeGet(builder.build().toString());
-        return RestaurantInfo.fromJSON(restaurants);
+        return RestaurantInfo.fromJson(restaurants);
     }
 
 

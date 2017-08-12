@@ -2,6 +2,7 @@ package com.ajinkya.foodie.model;
 
 import android.net.Uri;
 import android.support.annotation.NonNull;
+import android.util.Log;
 
 import org.apache.commons.lang3.StringUtils;
 import org.json.JSONArray;
@@ -9,7 +10,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 public class RestaurantInfo {
-
+    private static final String TAG = "RestaurantInfo";
     private String phoneNumber;
     private String name;
     private String printableAddress;
@@ -33,7 +34,7 @@ public class RestaurantInfo {
 
     }
 
-    public static RestaurantInfo fromJSON(@NonNull String restaurantInfoApiResponse) {
+    public static RestaurantInfo fromJson(@NonNull String restaurantInfoApiResponse) {
         RestaurantInfo restaurantInfo = new RestaurantInfo();
         try {
             JSONObject restaurantObj = new JSONObject(restaurantInfoApiResponse);
@@ -62,6 +63,7 @@ public class RestaurantInfo {
 
 
         } catch (JSONException e) {
+            Log.e(TAG, "fromJson failed with JSONException - " + e.getCause().getLocalizedMessage());
             restaurantInfo = new RestaurantInfo();
         }
         return restaurantInfo;

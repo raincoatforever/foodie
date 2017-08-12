@@ -2,6 +2,7 @@ package com.ajinkya.foodie.model;
 
 import android.net.Uri;
 import android.support.annotation.NonNull;
+import android.util.Log;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -13,6 +14,7 @@ import java.util.LinkedList;
 
 public class RestaurantListItem {
 
+    private static final String TAG = "RestaurantListItem";
     private long id;
     private String name;
     private Uri thumbnailUri;
@@ -56,6 +58,7 @@ public class RestaurantListItem {
             restaurantListItem.tags = jsonObject.getJSONArray("tags").toString().replace("[", "").replace("]", "").replace("\"", "");
 
         } catch (JSONException e) {
+            Log.e(TAG, "fromJson failed with JSONException - " + e.getCause().getLocalizedMessage());
             restaurantListItem = new RestaurantListItem();
         }
         return restaurantListItem;

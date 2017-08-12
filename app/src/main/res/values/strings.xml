@@ -3,4 +3,5 @@
     <string name="restaurent_list_view_title">Discover</string>
     <string name="copy_confirm_toast">"Copied to clipboard . . "</string>
     <string name="pre_order_string">Pre-Order</string>
+    <string name="generic_error_try_again">Something went wrong, please try again!</string>
 </resources>

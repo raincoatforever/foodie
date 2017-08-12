@@ -1,6 +1,5 @@
 package com.ajinkya.foodie.tasks;
 
-import android.content.Context;
 import android.os.AsyncTask;
 
 import com.ajinkya.foodie.model.RestaurantListItem;

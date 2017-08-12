@@ -3,8 +3,6 @@ package com.ajinkya.foodie.model;
 import android.net.Uri;
 
 import com.ajinkya.foodie.BaseTestRunner;
-import com.ajinkya.foodie.model.RestaurantInfo;
-import com.ajinkya.foodie.model.RestaurantStatusType;
 
 import org.junit.Test;
 
@@ -16,7 +14,7 @@ public class RestaurantInfoTest extends BaseTestRunner {
 
     @Test
     public void fromJSON() throws Exception {
-        RestaurantInfo restaurantInfo = RestaurantInfo.fromJSON(SAMPLE_JSON_RESPONSE);
+        RestaurantInfo restaurantInfo = RestaurantInfo.fromJson(SAMPLE_JSON_RESPONSE);
         assertEquals("+16503270107", restaurantInfo.getPhoneNumber());
         assertEquals("Gyros Gyros", restaurantInfo.getName());
         assertEquals("498 University Avenue, Palo Alto, CA 94301, USA", restaurantInfo.getPrintableAddress());
